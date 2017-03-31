@@ -20,7 +20,7 @@
   echo '<td bgcolor="#669999"><b><u>Date Naissance</u></b></td>';
 
   echo '<td bgcolor="#669999"><b><u>Classe</u></b></td>';
-
+  
   echo '</tr>'."\n";
 
   for($i=0; $tab_etudiant = $query->fetchObject('Etudiant');$i++)
