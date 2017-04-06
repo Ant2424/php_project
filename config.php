@@ -1,7 +1,7 @@
 <?php
   $myDsn = 'mysql:host=localhost;port=3306;dbname=mini_projet;';
   $myUserDb = "root";
-  $myDbPwd = "Kotis24!";
+  $myDbPwd = "root";
 
   try
   {
