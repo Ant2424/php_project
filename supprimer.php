@@ -1,13 +1,13 @@
 <?php
   include 'config.php';
 
-  $Prenom = $_GET['etudiant'];
+  $mail_etudiant = $_GET['mail'];
 
   echo '<a href="main.php">retour accueil</a>';
 
-  print("<center>Supression de $Prenom </center>");
+  print("<center>Supression de $mail_etudiant </center>");
 
-  $delete = $pdo->exec("DELETE FROM etudiant WHERE prenom = '$Prenom'");
-  echo 'Nb de lignes effacees : '. $delete;
+  $delete = $pdo->exec("DELETE FROM etudiant WHERE mail = '$mail_etudiant'");
+  echo 'Nb de lignes effacées : '. $delete;
 
   unset($pdo);

@@ -2,11 +2,11 @@
   include 'config.php';
   include 'Etudiant.php';
 
-  $Prenom = $_GET['etudiant'];
+  $mail_etudiant = $_GET['mail'];
 
   echo '<a href="main.php">retour accueil</a>';
 
-  $query = $pdo->prepare("SELECT * FROM etudiant WHERE prenom = '$Prenom'");
+  $query = $pdo->prepare("SELECT * FROM etudiant WHERE mail = '$mail_etudiant'");
   $query->execute();
 
   echo '<table bgcolor="#FFFFFF">'."\n";

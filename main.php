@@ -24,17 +24,17 @@
     echo '<tr>';
 
     echo '<td bgcolor="#CCCCCC">'.$tab_etudiant->getMail().'</td>';
+    $mail_etudiant = $tab_etudiant->getMail();
 
     echo '<td bgcolor="#CCCCCC">'.$tab_etudiant->getNom().'</td>';
 
     echo '<td bgcolor="#CCCCCC">'.$tab_etudiant->getPrenom().'</td>';
-    $id = $tab_etudiant->getPrenom();
 
-    echo "<td><a href='supprimer.php?etudiant=$id'>supprimer</td>";
+    echo "<td><a href='supprimer.php?mail=$mail_etudiant'>supprimer</td>";
 
-    echo "<td><a href='details.php?etudiant=$id'>détails</td>";
+    echo "<td><a href='details.php?mail=$mail_etudiant'>détails</td>";
 
-    echo "<td><a href='modifier.php?etudiant=$id'>modifier</td>";
+    echo "<td><a href='modifier.php?mail=$mail_etudiant'>modifier</td>";
 
     echo '</tr>'."\n";
   }
