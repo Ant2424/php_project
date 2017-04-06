@@ -17,10 +17,6 @@
 
   echo '<td bgcolor="#669999"><b><u>Prenom</u></b></td>';
 
-  echo '<td bgcolor="#669999"><b><u>Date Naissance</u></b></td>';
-
-  echo '<td bgcolor="#669999"><b><u>Classe</u></b></td>';
-
   echo '</tr>'."\n";
 
   for($i=0; $tab_etudiant = $query->fetchObject('Etudiant');$i++)
@@ -34,15 +30,11 @@
     echo '<td bgcolor="#CCCCCC">'.$tab_etudiant->getPrenom().'</td>';
     $id = $tab_etudiant->getPrenom();
 
-    echo '<td bgcolor="#CCCCCC">'.$tab_etudiant->getDateNaissance().'</td>';
+    echo "<td><a href='supprimer.php?etudiant=$id'>supprimer</td>";
 
-    echo '<td bgcolor="#CCCCCC">'.$tab_etudiant->getSection().'</td>';
+    echo "<td><a href='details.php?etudiant=$id'>détails</td>";
 
-    echo "<td><a href='supprimer.php?id=$id'>supprimer</td>";
-
-    echo "<td><a href='details.php?id=$id'>détails</td>";
-
-    echo "<td><a href='modifier.php?id=$id'>modifier</td>";
+    echo "<td><a href='modifier.php?etudiant=$id'>modifier</td>";
 
     echo '</tr>'."\n";
   }
@@ -50,4 +42,4 @@
 
   unset($pdo);
 
-  echo '<a href="liste.php">Nouvel étudiant</a>';
+  echo '<a href="creer.php">Nouvel étudiant</a>';

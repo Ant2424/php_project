@@ -1,7 +1,7 @@
 <?php
   include 'config.php';
 
-  $Prenom = $_GET['id'];
+  $Prenom = $_GET['etudiant'];
 
   echo '<a href="main.php">retour accueil</a>';
 
