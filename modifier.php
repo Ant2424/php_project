@@ -7,6 +7,8 @@
   $date_etudiant = $_GET['date_naissance'];
   $section_etudiant = $_GET['section'];
 
+  // jécris un truc
+
   echo '<a href="main.php">retour accueil</a>';
 
   print("<center>Bonjour $mail_etudiant </center>");
