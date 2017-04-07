@@ -27,14 +27,18 @@
     $mail_etudiant = $tab_etudiant->getMail();
 
     echo '<td bgcolor="#CCCCCC">'.$tab_etudiant->getNom().'</td>';
+    $nom_etudiant = $tab_etudiant->getNom();
 
     echo '<td bgcolor="#CCCCCC">'.$tab_etudiant->getPrenom().'</td>';
+    $prenom_etudiant = $tab_etudiant->getPrenom();
+    $date_etudiant = $tab_etudiant->getDateNaissance();
+    $section_etudiant = $tab_etudiant->getSection();
 
     echo "<td><a href='supprimer.php?mail=$mail_etudiant'>supprimer</td>";
 
     echo "<td><a href='details.php?mail=$mail_etudiant'>détails</td>";
 
-    echo "<td><a href='modifier.php?mail=$mail_etudiant'>modifier</td>";
+    echo "<td><a href='modifier.php?mail=$mail_etudiant&nom=$nom_etudiant&prenom=$prenom_etudiant&date_naissance=$date_etudiant&section=$section_etudiant'>modifier</td>";
 
     echo '</tr>'."\n";
   }
