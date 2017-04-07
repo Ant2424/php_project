@@ -22,7 +22,8 @@
   echo 'Nom : '.'<input type="text" name="nom" value="'.$nom_etudiant.'"/>'."<br>";
   echo 'Prenom : '.'<input type="text" name="prenom" value="'.$prenom_etudiant.'"/>'."<br>";
   echo 'Date de naissance : '.'<input type="date" name="date_naissance" value="'.$date_etudiant.'"/>'.' AAAA-MM-JJ'."<br>";
-  echo 'Section : '.'<select name="section"><option value="'.$section_etudiant.'">$section_etudiant</option><option value="CIR2">CIR2</option></select>'."<br>";
+  echo 'Section : ';?><select><option value="CIR1"<?=$section_etudiant == 'CIR1' ? ' selected="selected"' : '';?>>CIR1</option><option value="CIR2"<?=$section_etudiant == 'CIR2' ? ' selected="selected"' : '';?>>CIR2</option></select><br>
+  <?php
 
   echo '<input type="submit" value="Valider" />';
 
