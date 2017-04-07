@@ -1,6 +1,6 @@
 <?php
   include 'config.php';
-
+// jécris un truc
   $mail_etudiant = $_GET['mail'];
   $Nom = $_GET['nom'];
   $Prenom = $_GET['prenom'];
