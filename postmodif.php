@@ -13,10 +13,10 @@
 
   $update = $pdo->prepare("UPDATE etudiant SET mail=:mail, nom=:nom, prenom=:prenom, date_naissance=:date_naissance, section=:section WHERE mail=:mail");
   if($update->execute(array(':mail'=>$mail_etudiant,':nom'=>$nom_etudiant,':prenom'=>$prenom_etudiant,':date_naissance'=>$date_etudiant,':section'=>$section_etudiant))){
-    echo "modification réussie";
+    echo "modification des informations de $mail_etudiant réussie";
   }
   else{
-    echo "probleme modification";
+    echo "probleme lors de la modification de $mail_etudiant dans la base de données";
   }
 
   unset($pdo);
