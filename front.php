@@ -7,10 +7,16 @@
 
   print("<center><b>Front office</b></center>");
 
-  // Sélectionne tous les étudiants de la base de données
+  // Sélectionne tous les étudiants de la base de données et prépare la requête pour lutter contre l'injection de SQL
 
-  $query = $pdo->prepare("SELECT * FROM etudiant");
-  $query->execute();
+  $front = $pdo->prepare("SELECT * FROM etudiant");
+
+  if($front->execute()){
+    echo "Affichage des étudiants de la base de données";
+  }
+  else{
+    echo "Problème lors de l'affichage de la base de données";
+  }
 
   // Affichage des différentes colonnes des étudiants de la base de données
 
@@ -23,7 +29,7 @@
 
     // Affichage des étudiants un par un avec une boucle for
 
-    for($i=0; $tab_etudiant = $query->fetchObject('Etudiant');$i++)
+    for($i=0; $tab_etudiant = $front->fetchObject('Etudiant');$i++)
     {
       echo '<tr>';
         echo '<td bgcolor="#CCCCCC">'.$tab_etudiant->getMail().'</td>';

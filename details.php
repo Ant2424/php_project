@@ -13,10 +13,16 @@
 
   echo '<a href="back.php">retour accueil</a>';
 
-  // Sélectionne uniquement les informations d'un étudiant via son mail unique
+  // Sélectionne uniquement les informations d'un étudiant via son mail unique et prépare la requête pour lutter contre l'injection de SQL
 
-  $query = $pdo->prepare("SELECT * FROM etudiant WHERE mail = '$mail_etudiant'");
-  $query->execute();
+  $details = $pdo->prepare("SELECT * FROM etudiant WHERE mail = '$mail_etudiant'");
+
+  if($details->execute()){
+    echo "Affichage de l'étudiant de la base de données";
+  }
+  else{
+    echo "Problème lors de l'affichage de l'étudiant de la base de données";
+  }
 
   echo '<table bgcolor="#FFFFFF">'."\n";
 
@@ -29,7 +35,7 @@
       echo '<td bgcolor="#669999"><b><u>Date Naissance</u></b></td>';
       echo '<td bgcolor="#669999"><b><u>Classe</u></b></td>';
     echo '</tr>'."\n";
-    $tab_etudiant = $query->fetchObject('Etudiant');
+    $tab_etudiant = $details->fetchObject('Etudiant');
     echo '<tr>';
       echo '<td bgcolor="#CCCCCC">'.$tab_etudiant->getMail().'</td>';
       echo '<td bgcolor="#CCCCCC">'.$tab_etudiant->getNom().'</td>';

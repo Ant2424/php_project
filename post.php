@@ -18,7 +18,7 @@
 
   print("<center>Bonjour $prenom_etudiant </center>");
 
-  // Insertion d'un nouvel étudiant dans la base de données
+  // Insertion d'un nouvel étudiant dans la base de données et prépare la requête pour lutter contre l'injection de SQL
 
   $insert = $pdo->prepare("INSERT INTO etudiant(mail, nom, prenom, date_naissance, section) VALUES(:mail,:nom,:prenom,:date_naissance,:section)");
 

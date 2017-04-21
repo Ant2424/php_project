@@ -18,7 +18,7 @@
 
   print("<center>Bonjour $mail_etudiant </center>");
 
-  // Mise à jour des informations d'un étudiant dans la base de données
+  // Mise à jour des informations d'un étudiant dans la base de données et prépare la requête pour lutter contre l'injection de SQL
 
   $update = $pdo->prepare("UPDATE etudiant SET mail=:mail, nom=:nom, prenom=:prenom, date_naissance=:date_naissance, section=:section WHERE mail=:mail");
 

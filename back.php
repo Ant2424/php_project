@@ -7,10 +7,16 @@
 
   print("<center><b>Back office</b></center>");
 
-  // Sélectionne tous les étudiants de la base de données
+  // Sélectionne tous les étudiants de la base de données et prépare la requête pour lutter contre l'injection de SQL
 
-  $query = $pdo->prepare("SELECT * FROM etudiant");
-  $query->execute();
+  $back = $pdo->prepare("SELECT * FROM etudiant");
+
+  if($back->execute()){
+    echo "Affichage des étudiants de la base de données";
+  }
+  else{
+    echo "Problème lors de l'affichage des étudiants de la base de données";
+  }
 
   // Affichage des différentes colonnes des étudiants de la base de données
 
@@ -23,7 +29,7 @@
 
     // Affichage des étudiants un par un avec une boucle for
 
-    for($i=0; $tab_etudiant = $query->fetchObject('Etudiant');$i++)
+    for($i=0; $tab_etudiant = $back->fetchObject('Etudiant');$i++)
     {
       // Récupération et attribution des différents données de chaque étudiant dans des variables pour faciliter leurs utilisations
 
