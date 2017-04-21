@@ -1,3 +1,7 @@
 # php_project
-projet php en binome CIR2.
+Projet php en binome CIR2 par Antoine et Virgile.
 CRUD SQL base de données avec PHP sur la gestion d'étudiants.
+
+1) Pour modifier la connexion à la base de données, veuillez éditer le fichier : config.php
+2) Pour accéder au back office : projetPHP/back.php
+3) Pour accéder au front office : projetPHP/front.php
