@@ -1,22 +1,32 @@
 <?php
+
+  // Inclusion du fichier de configuration pour simplifier et éviter la redondance du code
+
   include 'config.php';
 
-  $Mail = $_POST['mail'];
-  $Nom = $_POST['nom'];
-  $Prenom = $_POST['prenom'];
-  $Date_naissance = $_POST['date_naissance'];
-  $Section = $_POST['section'];
+  // Récupération du mail, du nom, du prénom, de la date de naissance et de la classe de l'étudiant lors de l'envoi du formulaire
 
-  echo '<a href="main.php">retour accueil</a>';
+  $mail_etudiant = $_POST['mail'];
+  $nom_etudiant = $_POST['nom'];
+  $prenom_etudiant = $_POST['prenom'];
+  $date_etudiant = $_POST['date_naissance'];
+  $section_etudiant = $_POST['section'];
 
-  print("<center>Bonjour $Prenom </center>");
+  // Lien vers la page d'accueil
+
+  echo '<a href="back.php">retour accueil</a>';
+
+  print("<center>Bonjour $prenom_etudiant </center>");
+
+  // Insertion d'un nouvel étudiant dans la base de données
 
   $insert = $pdo->prepare("INSERT INTO etudiant(mail, nom, prenom, date_naissance, section) VALUES(:mail,:nom,:prenom,:date_naissance,:section)");
-  if($insert->execute(array(':mail'=>$Mail,':nom'=>$Nom,':prenom'=>$Prenom,':date_naissance'=>$Date_naissance,':section'=>$Section))){
-    echo "insertion de $mail_etudiant dans la base de données réussie";
+
+  if($insert->execute(array(':mail'=>$mail_etudiant,':nom'=>$nom_etudiant,':prenom'=>$prenom_etudiant,':date_naissance'=>$date_etudiant,':section'=>$section_etudiant))){
+    echo "Insertion de $mail_etudiant dans la base de données réussie";
   }
   else{
-    echo "probleme lors de l'insertion de $mail_etudiant dans la base de données";
+    echo "Problème lors de l'insertion de $mail_etudiant dans la base de données";
   }
 
   unset($pdo);
