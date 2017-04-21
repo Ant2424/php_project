@@ -11,7 +11,7 @@
 
   // Lien vers la page d'accueil
 
-  echo '<a href="back.php">retour accueil</a>';
+  echo '<a href="back.php">retour accueil</a>'.'<br>';
 
   // Sélectionne uniquement les informations d'un étudiant via son mail unique et prépare la requête pour lutter contre l'injection de SQL
 
