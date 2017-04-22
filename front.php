@@ -5,6 +5,9 @@
   include 'config.php';
   include 'Etudiant.php';
 
+  echo '<link href="css/bootstrap.min.css" rel="stylesheet">';
+  echo '<link href="css/bootstrap-theme.min.css" rel="stylesheet">';
+
   print("<center><b>Front office</b></center>");
 
   // Sélectionne tous les étudiants de la base de données et prépare la requête pour lutter contre l'injection de SQL
@@ -40,3 +43,4 @@
   echo '</table>'."\n";
 
   unset($pdo);
+  echo'<script src="js/bootstrap.min.js"></script>';
