@@ -3,8 +3,8 @@
   // Définition des informations nécessaire pour la connexion à la base de données
 
   $myDsn = 'mysql:host=localhost;port=3306;dbname=mini_projet;';
-  $myUserDb = "";
-  $myDbPwd = "";
+  $myUserDb = "root";
+  $myDbPwd = "leconquetDU29217";
 
   try
   {

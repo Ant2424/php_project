@@ -7,6 +7,8 @@
 
   echo '<link href="css/bootstrap.min.css" rel="stylesheet">';
   echo '<link href="css/bootstrap-theme.min.css" rel="stylesheet">';
+  echo '<link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">';
+
 
 
   //print("<center><b>Back office</b></center>");
@@ -24,16 +26,10 @@
 
   // Affichage des différentes colonnes des étudiants de la base de données
 
-  echo '<div class="panel panel-primary container">';
+  echo '<div class="panel-primary container">';
 
-  echo '<div class="panel-heading">Back Office</div>';
+  echo '<div class="panel-heading"><strong>Back Office</strong></div>';
   echo '<div class="panel-body">';
-  /*echo '<table bgcolor="#FFFFFF">'."\n";
-    echo '<tr>';
-      echo '<td bgcolor="#669999"><b><u>Mail</u></b></td>';
-      echo '<td bgcolor="#669999"><b><u>Nom</u></b></td>';
-      echo '<td bgcolor="#669999"><b><u>Prenom</u></b></td>';
-    echo '</tr>'."\n";*/
 
     echo '<table class="table">';
       echo '<thead>';
@@ -59,33 +55,32 @@
       $section_etudiant = $tab_etudiant->getSection();
 
       echo '<tr>';
-        /*echo '<td bgcolor="#CCCCCC">'.$tab_etudiant->getMail().'</td>';
-        echo '<td bgcolor="#CCCCCC">'.$tab_etudiant->getNom().'</td>';
-        echo '<td bgcolor="#CCCCCC">'.$tab_etudiant->getPrenom().'</td>';
 
-        // Création de trois liens contenant les données nécessaire pour supprimer, afficher les détails et modifier les informations de l'étudiant sélectionné dans l'url
-
-        echo "<td><a href='supprimer.php?mail=$mail_etudiant'>supprimer</td>";
-        echo "<td><a href='details.php?mail=$mail_etudiant'>détails</td>";
-        echo "<td><a href='modifier.php?mail=$mail_etudiant&nom=$nom_etudiant&prenom=$prenom_etudiant&date_naissance=$date_etudiant&section=$section_etudiant'>modifier</td>";*/
         $row = $i + 1;
         echo '<th scope="row">'.$row.'</th>';
         echo '<td>'.$tab_etudiant->getMail().'</td>';
         echo '<td>'.$tab_etudiant->getNom().'</td>';
         echo '<td>'.$tab_etudiant->getPrenom().'</td>';
 
-        echo "<td><a href='supprimer.php?mail=$mail_etudiant'>supprimer</td>";
-        echo "<td><a href='details.php?mail=$mail_etudiant'>détails</td>";
-        echo "<td><a href='modifier.php?mail=$mail_etudiant&nom=$nom_etudiant&prenom=$prenom_etudiant&date_naissance=$date_etudiant&section=$section_etudiant'>modifier</td>";
-
+        echo "<td><a href='details.php?mail=$mail_etudiant'>
+                <button type='button' class='btn btn-info'><span class='fa fa-search' aria-hidden='true'></span> Détails</button>";
+        echo "<a href='modifier.php?mail=$mail_etudiant&nom=$nom_etudiant&prenom=$prenom_etudiant&date_naissance=$date_etudiant&section=$section_etudiant'>
+                <button type='button' class='btn btn-warning'><span class='fa fa-edit' aria-hidden='true'></span> Modifier</button>";
+        echo "<a href='supprimer.php?mail=$mail_etudiant'>
+                <button type='button' class='btn btn-danger'><span class='fa fa-remove' aria-hidden='true'></span> Supprimer</button>
+              </td>";
 
 
       echo '</tr>'."\n";
     }
 
-    echo '<tr><a href="creer.php">Nouvel étudiant</a></tr>';
-
   echo '</table>'."\n";
+
+  echo '<a href="creer.php">
+        <button type="button" class="btn btn-primary ">
+        <span class="fa fa-plus fa-lg" aria-hidden="true"></span> Ajouter
+        </button>
+        </a>';
 
   echo '</div></div>';
 
