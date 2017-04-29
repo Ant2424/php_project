@@ -14,3 +14,11 @@
   {
     echo "pb".$e->getMessage();
   }
+
+
+  echo '<link href="css/bootstrap.min.css" rel="stylesheet">';
+  echo '<link href="css/bootstrap-theme.min.css" rel="stylesheet">';
+  echo '<link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">';
+  echo'<script src="js/bootstrap.min.js"></script>';
+
+  ?>

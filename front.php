@@ -5,17 +5,15 @@
   include 'config.php';
   include 'Etudiant.php';
 
-  echo '<link href="css/bootstrap.min.css" rel="stylesheet">';
-  echo '<link href="css/bootstrap-theme.min.css" rel="stylesheet">';
 
-  print("<center><b>Front office</b></center>");
+  //print("<center><b>Front office</b></center>");
 
   // Sélectionne tous les étudiants de la base de données et prépare la requête pour lutter contre l'injection de SQL
 
   $front = $pdo->prepare("SELECT * FROM etudiant");
 
   if($front->execute()){
-    echo "Affichage des étudiants de la base de données";
+    //echo "Affichage des étudiants de la base de données";
   }
   else{
     echo "Problème lors de l'affichage de la base de données";
@@ -23,24 +21,42 @@
 
   // Affichage des différentes colonnes des étudiants de la base de données
 
-  echo '<table bgcolor="#FFFFFF">'."\n";
-    echo '<tr>';
-      echo '<td bgcolor="#669999"><b><u>Mail</u></b></td>';
-      echo '<td bgcolor="#669999"><b><u>Nom</u></b></td>';
-      echo '<td bgcolor="#669999"><b><u>Prenom</u></b></td>';
-    echo '</tr>'."\n";
+
+  echo '<div class="panel-primary container">';
+
+  echo '<div class="panel-heading"><strong>Front Office</strong></div>';
+
+    echo '<div class="panel-body">';
+
+      echo '<table class="table">';
+        echo '<thead>';
+          echo '<tr>';
+            echo '<th>#</th>';
+            echo '<th>Mail</th>';
+            echo '<th>Nom</th>';
+            echo '<th>Prenom</th>';
+          echo'</tr>';
+        echo '</thead>';
+        echo '<tbody>';
 
     // Affichage des étudiants un par un avec une boucle for
 
     for($i=0; $tab_etudiant = $front->fetchObject('Etudiant');$i++)
     {
-      echo '<tr>';
-        echo '<td bgcolor="#CCCCCC">'.$tab_etudiant->getMail().'</td>';
-        echo '<td bgcolor="#CCCCCC">'.$tab_etudiant->getNom().'</td>';
-        echo '<td bgcolor="#CCCCCC">'.$tab_etudiant->getPrenom().'</td>';
-      echo '</tr>'."\n";
+
+            echo '<tr>';
+
+              $row = $i + 1;
+              echo '<th scope="row">'.$row.'</th>';
+              echo '<td>'.$tab_etudiant->getMail().'</td>';
+              echo '<td>'.$tab_etudiant->getNom().'</td>';
+              echo '<td>'.$tab_etudiant->getPrenom().'</td>';
+
+
+            echo '</tr>'."\n";
     }
   echo '</table>'."\n";
 
+  echo '</div></div>';
+
   unset($pdo);
-  echo'<script src="js/bootstrap.min.js"></script>';

@@ -5,13 +5,7 @@
   include 'config.php';
   include 'Etudiant.php';
 
-  echo '<link href="css/bootstrap.min.css" rel="stylesheet">';
-  echo '<link href="css/bootstrap-theme.min.css" rel="stylesheet">';
-  echo '<link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">';
 
-
-
-  //print("<center><b>Back office</b></center>");
 
   // Sélectionne tous les étudiants de la base de données et prépare la requête pour lutter contre l'injection de SQL
 
@@ -74,6 +68,7 @@
       echo '</tr>'."\n";
     }
 
+  echo '</tbody>';
   echo '</table>'."\n";
 
   echo '<a href="creer.php">
@@ -82,6 +77,8 @@
         </button>
         </a>';
 
+
+
   echo '</div></div>';
 
   unset($pdo);
@@ -89,5 +86,3 @@
   // Lien permettant de créer un nouvel étudiant
 
   //echo '<a href="creer.php">Nouvel étudiant</a>';
-
-  echo'<script src="js/bootstrap.min.js"></script>';
