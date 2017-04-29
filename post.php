@@ -23,10 +23,12 @@
   $insert = $pdo->prepare("INSERT INTO etudiant(mail, nom, prenom, date_naissance, section) VALUES(:mail,:nom,:prenom,:date_naissance,:section)");
 
   if($insert->execute(array(':mail'=>$mail_etudiant,':nom'=>$nom_etudiant,':prenom'=>$prenom_etudiant,':date_naissance'=>$date_etudiant,':section'=>$section_etudiant))){
-    echo "Insertion de $mail_etudiant dans la base de données réussie";
+    //echo "Insertion de $mail_etudiant dans la base de données réussie";
+    echo '<div class ="container alert alert-success" role="alert">Insertion de '.$mail_etudiant.'dans la base de données réussie</div>';
   }
   else{
-    echo "Problème lors de l'insertion de $mail_etudiant dans la base de données";
+    //echo "Problème lors de l'insertion de $mail_etudiant dans la base de données";
+    echo '<div class ="container alert alert-danger" role="aler">Problème lors de l\'insertion de'.$mail_etudiant.' dans la base de données</div>';
   }
 
   unset($pdo);

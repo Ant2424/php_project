@@ -37,6 +37,7 @@
             echo '<th>Nom</th>';
             echo '<th>Prenom</th>';
             echo '<th>Date de naissance </th>';
+            echo '<th>Section</th>';
           echo'</tr>';
         echo '</thead>';
         echo '<tbody>';
