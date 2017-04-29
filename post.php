@@ -28,7 +28,7 @@
   }
   else{
     //echo "Problème lors de l'insertion de $mail_etudiant dans la base de données";
-    echo '<div class ="container alert alert-danger" role="aler">Problème lors de l\'insertion de'.$mail_etudiant.' dans la base de données</div>';
+    echo '<div class ="container alert alert-danger" role="alert">Problème lors de l\'insertion de'.$mail_etudiant.' dans la base de données</div>';
   }
 
   unset($pdo);
