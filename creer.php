@@ -7,7 +7,7 @@
 
   // Lien vers la page d'accueil
 
-  echo '<a href="main.php">retour accueil</a>';
+  echo '<a href="back.php">retour accueil</a>';
 
   // Création du formulaire pour ajouter un nouvel étudiant
 
