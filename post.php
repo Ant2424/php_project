@@ -8,7 +8,7 @@
   // * Date : 1er mai 2017
   // * Version : 1.0
   // *
-  // * Fichier: postmodif.php
+  // * Fichier: post.php
   // *
   // * Mise à jour des informations d'un étudiant dans la base de données
   // ***************************************************************************
