@@ -1,11 +1,22 @@
 <?php
+  // ***************************************************************************
+  // * Mini projet PHP proposé par Christophe Vignaud
+  // *
+  // * Antoine Auffret et Virgile Prin
+  // * ISEN-Brest CIR2 2016-2017
+  // *
+  // * Date : 1er mai 2017
+  // * Version : 1.0
+  // *
+  // * Fichier: modifier.php
+  // *
+  // * Modification d'un étudiant
+  // ***************************************************************************
 
   // Inclusion du fichier de configuration pour simplifier et éviter la redondance du code
-
   include 'config.php';
 
   // Récupération du mail, du nom, du prénom, de la date de naissance et de la classe de l'étudiant via url
-
   $mail_etudiant = $_GET['mail'];
   $nom_etudiant = $_GET['nom'];
   $prenom_etudiant = $_GET['prenom'];
@@ -13,13 +24,10 @@
   $section_etudiant = $_GET['section'];
 
   // Lien vers la page d'accueil
-
   echo '<a href="back.php">retour accueil</a>';
-
   print("<center>Bonjour $mail_etudiant </center>");
 
   // Pré-remplissage du formulaire contenant les informations de l'étudiant
-
   echo '<form method="post" action="postmodif.php">';
     echo '<fieldset>';
       echo '<legend>Créer un nouvel étudiant</legend>';
@@ -33,3 +41,4 @@
       echo '</p>';
     echo '</fieldset>';
   echo '</form>';
+?>

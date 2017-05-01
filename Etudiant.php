@@ -1,6 +1,17 @@
 <?php
-
-  // Définition de la classe Etudiant et des méthodes getters et setters
+  // ***************************************************************************
+  // * Mini projet PHP proposé par Christophe Vignaud
+  // *
+  // * Antoine Auffret et Virgile Prin
+  // * ISEN-Brest CIR2 2016-2017
+  // *
+  // * Date : 1er mai 2017
+  // * Version : 1.0
+  // *
+  // * Fichier: Etudiant.php
+  // *
+  // * Définition de la classe Etudiant et des méthodes getters et setters
+  // ***************************************************************************
 
   class Etudiant
   {
@@ -10,6 +21,7 @@
     private $date_naissance;
     private $section;
 
+    // Méthodes getters
     public function getMail()
     {
       return $this->mail;
@@ -31,7 +43,7 @@
       return $this->section;
     }
 
-
+    // Méthodes setters
     public function setMail($mail)
     {
       $this->mail = $mail;
@@ -53,3 +65,4 @@
       $this->section = $section;
     }
   }
+?>
