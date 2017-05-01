@@ -8,32 +8,17 @@
 
   $mail_etudiant = $_GET['mail'];
 
+  echo '<div class="alert alert-danger container" role="alert" id="half-size">Etes vous sûr de supprimer cet utilisateur ?<br>';
+
   // Lien vers la page d'accueil
-
-  /*echo '<a href="back.php">retour accueil</a>';
-
-  print("<center>Supression de $mail_etudiant </center>");
-
-  // Suppression d'un étudiant dans la base de données et prépare la requête pour lutter contre l'injection de SQL
-
-  $delete = $pdo->prepare("DELETE FROM etudiant WHERE mail = '$mail_etudiant'");
-
-  if($delete->execute(array(':mail'=>$mail_etudiant))){
-    echo "Suppression de $mail_etudiant dans la base de données réussie";
-  }
-  else{
-    echo "Problème lors de la suppression de $mail_etudiant dans la base de données";
-  }
-
-  unset($pdo);*/
-
-  echo '<div class="alert alert-danger container" role="alert">Etes vous sûr de supprimer cet utilisateur ?<br>';
 
   echo '<a href="back.php">
         <button type="button" class="btn btn-primary ">
         <span class="fa fa-home fa-lg" aria-hidden="true"></span> Retour
         </button>
         </a>';
+
+  // Boutton de suppression
 
   echo '<a href="supprimer.php?mail='.$mail_etudiant.'&click=1">
         <button type="button" class="btn btn-success ">
