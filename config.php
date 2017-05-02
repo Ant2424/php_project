@@ -15,9 +15,14 @@
 
   // Méthode non sécurisée pour faciliter les modifications
   $myDsn = 'mysql:host=localhost;port=3306;dbname=mini_projet;';
-  $myUserDb = "root";
-  $myDbPwd = "leconquetDU29217";
+  $myUserDb = $_POST['id'];
+  $myDbPwd = $_POST['mdp'];
 
+  echo '<form method="post">';
+    echo '<input type="text" name="id">';
+    echo '<input type="text" name="mdp">';
+    echo '<button type="submit">connexion</button>';
+  echo '</form>';
   try
   {
     $pdo = new PDO($myDsn,$myUserDb,$myDbPwd);
