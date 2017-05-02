@@ -15,8 +15,8 @@
 
   // Méthode non sécurisée pour faciliter les modifications
   $myDsn = 'mysql:host=localhost;port=3306;dbname=mini_projet;';
-  $myUserDb = $_POST['id'];
-  $myDbPwd = $_POST['mdp'];
+  $myUserDb = "";
+  $myDbPwd = "";
 
   try
   {
@@ -26,17 +26,6 @@
   {
     echo "pb".$e->getMessage();
   }
-
-  if(isset($pdo) == false)
-  {
-    echo '<form method="post">';
-      echo '<input type="text" name="id">';
-      echo '<input type="text" name="mdp">';
-      echo '<button type="submit">connexion</button>';
-    echo '</form>';
-  }
-
-
 
   echo '<link href="css/bootstrap.min.css" rel="stylesheet">';
   echo '<link href="css/bootstrap-theme.min.css" rel="stylesheet">';
