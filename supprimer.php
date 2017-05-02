@@ -19,16 +19,16 @@
   // Récupération du mail de l'étudiant via url
   $mail_etudiant = $_GET['mail'];
 
-  echo '<div class="alert alert-danger container" role="alert">Etes vous sûr de supprimer cet étudiant : '.$mail_etudiant.' ?<br>';
+  echo '<div class="alert alert-danger container" id="half-size" role="alert">Etes vous sûr de supprimer cet étudiant : '.$mail_etudiant.' ?<br>';
     echo '<a href="back.php">
-            <button type="button" class="btn btn-primary ">
-            <span class="fa fa-home fa-lg" aria-hidden="true"></span> Retour
+            <button type="button" class="btn btn-danger ">
+            <span class="fa fa-close fa-lg" aria-hidden="true"></span> Annuler
             </button>
           </a>';
 
     echo '<a href="supprimer.php?mail='.$mail_etudiant.'&click=1">
             <button type="button" class="btn btn-success ">
-            <span class="fa fa-check fa-lg" aria-hidden="true"></span> Valider
+            <span class="fa fa-close fa-lg" aria-hidden="true"></span> Valider
             </button>
           </a>';
   echo '</div>';

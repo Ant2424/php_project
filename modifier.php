@@ -43,6 +43,7 @@
       echo '<div class ="container alert alert-danger" role="alert">Problème lors de la modification de'.$mail_etudiant.' dans la base de données</div>';
     }
   }
+
   echo '<div class="panel-primary container" id="half-size">';
     echo '<div class="panel-heading"><center><strong>Modification</strong></center></div>';
     echo '<div class="panel-body">';

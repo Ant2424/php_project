@@ -46,21 +46,21 @@
         echo '<div class="form-group row">
                 <label class="col-sm-2 control-label">Email</label>
                 <div class="col-sm-10">
-                  <input class="form-control" type="email" name="mail">
+                  <input class="form-control" type="email" name="mail" required>
                 </div>
               </div>';
 
         echo '<div class="form-group row">
                 <label class="col-sm-2 control-label">Nom</label>
                 <div class="col-sm-10">
-                  <input class="form-control" type="text" name="nom">
+                  <input class="form-control" type="text" name="nom" required>
                 </div>
               </div>';
 
         echo '<div class="form-group row">
                 <label class="col-sm-2 control-label">Prénom</label>
                 <div class="col-sm-10">
-                  <input class="form-control" type="text" name="prenom">
+                  <input class="form-control" type="text" name="prenom" required>
                 </div>
               </div>';
 
